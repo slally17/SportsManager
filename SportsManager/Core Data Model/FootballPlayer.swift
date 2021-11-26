@@ -7,3 +7,15 @@
 //
 
 import Foundation
+import CoreData
+
+// ❎ CoreData Football Player entity public class
+public class FootballPlayer: NSManagedObject, Identifiable {
+
+    @NSManaged public var name: String?
+    @NSManaged public var age: NSNumber?
+    @NSManaged public var height: NSNumber?
+    @NSManaged public var weight: NSNumber?
+    @NSManaged public var team: Team?
+    @NSManaged public var photo: Photo?
+}

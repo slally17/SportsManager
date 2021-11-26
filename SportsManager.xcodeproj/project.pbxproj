@@ -44,6 +44,7 @@
 		B3660D36274ECD73009189B9 /* TeamStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3660D35274ECD73009189B9 /* TeamStruct.swift */; };
 		B3660D38274ECD7E009189B9 /* PlayerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3660D37274ECD7E009189B9 /* PlayerData.swift */; };
 		B3660D3A274ECD8A009189B9 /* PlayerStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3660D39274ECD8A009189B9 /* PlayerStruct.swift */; };
+		B3EB73372751A1F500435D0B /* UserAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EB73362751A1F500435D0B /* UserAuthentication.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +87,7 @@
 		B3660D35274ECD73009189B9 /* TeamStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamStruct.swift; sourceTree = "<group>"; };
 		B3660D37274ECD7E009189B9 /* PlayerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerData.swift; sourceTree = "<group>"; };
 		B3660D39274ECD8A009189B9 /* PlayerStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStruct.swift; sourceTree = "<group>"; };
+		B3EB73362751A1F500435D0B /* UserAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthentication.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 				B3660CDD274EAF0D009189B9 /* SportsManagerApp.swift */,
 				B3660CF0274EB128009189B9 /* Core Data Model */,
 				B3660D0D274EBC09009189B9 /* Data Model */,
+				B3EB73382751A74D00435D0B /* API Data */,
 				B3660D0E274EBC1E009189B9 /* Startup Views */,
 				B3660CF2274EB164009189B9 /* Supporting Files */,
 				B3660CF1274EB136009189B9 /* Tab Bar Views */,
@@ -170,6 +173,7 @@
 		B3660CF2274EB164009189B9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B3EB73362751A1F500435D0B /* UserAuthentication.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -246,6 +250,13 @@
 				B3660D23274ECBD0009189B9 /* ResetPassword.swift */,
 			);
 			path = "Startup Views";
+			sourceTree = "<group>";
+		};
+		B3EB73382751A74D00435D0B /* API Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "API Data";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,6 +336,7 @@
 				B3660D10274EBC3E009189B9 /* ClipsList.swift in Sources */,
 				B3660D00274EB9BA009189B9 /* TeamDetails.swift in Sources */,
 				B3660D20274ECBA8009189B9 /* LoginView.swift in Sources */,
+				B3EB73372751A1F500435D0B /* UserAuthentication.swift in Sources */,
 				B3660D26274ECC47009189B9 /* Photo.swift in Sources */,
 				B3660D0A274EBBBC009189B9 /* PlayerDetails.swift in Sources */,
 				B3660D04274EBA1E009189B9 /* ChangeTeam.swift in Sources */,

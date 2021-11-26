@@ -10,7 +10,37 @@ import SwiftUI
 
 struct MainView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TabView {
+            TeamsList()
+                .tabItem {
+                    Image(systemName: "sportscourt")
+                    Text("Teams")
+                }
+            PlayersList()
+                .tabItem {
+                    Image(systemName: "person.3.sequence.fill")
+                    Text("Players")
+                }
+            SearchDatabase()
+                .tabItem {
+                    Image(systemName: "magnifyingglass.circle")
+                    Text("Search")
+                }
+            ClipsList()
+                .tabItem {
+                    Image(systemName: "play.rectangle.fill")
+                    Text("Clips")
+                }
+            Settings()
+                .tabItem {
+                    Image(systemName: "gear")
+                    Text("Settings")
+                }
+            
+        }   // End of TabView
+            .font(.headline)
+            .imageScale(.medium)
+            .font(Font.title.weight(.regular))
     }
 }
 

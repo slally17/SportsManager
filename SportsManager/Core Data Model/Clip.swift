@@ -7,3 +7,10 @@
 //
 
 import Foundation
+import CoreData
+
+// ❎ CoreData Clip entity public class
+public class Clip: NSManagedObject, Identifiable {
+
+    @NSManaged public var youtubeID: String?
+}
