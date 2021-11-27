@@ -14,9 +14,7 @@ public class Team: NSManagedObject, Identifiable {
 
     @NSManaged public var name: String?
     @NSManaged public var sport: String?
-    @NSManaged public var baseballPlayers: NSSet?
-    @NSManaged public var basketballPlayers: NSSet?
-    @NSManaged public var footballPlayers: NSSet?
+    @NSManaged public var Players: NSSet?
     @NSManaged public var photo: Photo?
 }
 

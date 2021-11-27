@@ -14,4 +14,5 @@ public class Photo: NSManagedObject, Identifiable {
 
     @NSManaged public var photoData: Data?
     @NSManaged public var team: Team?
+    @NSManaged public var player: Player?
 }

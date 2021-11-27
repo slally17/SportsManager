@@ -1,53 +1,32 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19197" systemVersion="20G224" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="BaseballPlayer" representedClassName=".BaseballPlayer" syncable="YES">
-        <attribute name="age" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="height" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="name" optional="YES" attributeType="String"/>
-        <attribute name="weight" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="photo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Photo" inverseName="baseballPlayer" inverseEntity="Photo"/>
-        <relationship name="team" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Team" inverseName="baseballPlayers" inverseEntity="Team"/>
-    </entity>
-    <entity name="BasketballPlayer" representedClassName=".BasketballPlayer" syncable="YES">
-        <attribute name="age" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="height" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="name" optional="YES" attributeType="String"/>
-        <attribute name="weight" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="photo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Photo" inverseName="basketballPlayer" inverseEntity="Photo"/>
-        <relationship name="team" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Team" inverseName="basketballPlayers" inverseEntity="Team"/>
-    </entity>
     <entity name="Clip" representedClassName=".Clip" syncable="YES">
         <attribute name="youtubeID" optional="YES" attributeType="String"/>
     </entity>
-    <entity name="FootballPlayer" representedClassName=".FootballPlayer" syncable="YES">
+    <entity name="Photo" representedClassName=".Photo" syncable="YES">
+        <attribute name="photoData" optional="YES" attributeType="Binary"/>
+        <relationship name="player" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Player" inverseName="photo" inverseEntity="Player"/>
+        <relationship name="team" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Team" inverseName="photo" inverseEntity="Team"/>
+    </entity>
+    <entity name="Player" representedClassName=".BaseballPlayer" syncable="YES">
         <attribute name="age" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="height" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="sport" optional="YES" attributeType="String"/>
         <attribute name="weight" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="photo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Photo" inverseName="footballPlayer" inverseEntity="Photo"/>
-        <relationship name="team" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Team" inverseName="footballPlayers" inverseEntity="Team"/>
-    </entity>
-    <entity name="Photo" representedClassName=".Photo" syncable="YES">
-        <attribute name="photoData" optional="YES" attributeType="Binary"/>
-        <relationship name="baseballPlayer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BaseballPlayer" inverseName="photo" inverseEntity="BaseballPlayer"/>
-        <relationship name="basketballPlayer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BasketballPlayer" inverseName="photo" inverseEntity="BasketballPlayer"/>
-        <relationship name="footballPlayer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FootballPlayer" inverseName="photo" inverseEntity="FootballPlayer"/>
-        <relationship name="team" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Team" inverseName="photo" inverseEntity="Team"/>
+        <relationship name="photo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Photo" inverseName="player" inverseEntity="Photo"/>
+        <relationship name="team" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Team" inverseName="players" inverseEntity="Team"/>
     </entity>
     <entity name="Team" representedClassName=".Team" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="sport" optional="YES" attributeType="String"/>
-        <relationship name="baseballPlayers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="BaseballPlayer" inverseName="team" inverseEntity="BaseballPlayer"/>
-        <relationship name="basketballPlayers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="BasketballPlayer" inverseName="team" inverseEntity="BasketballPlayer"/>
-        <relationship name="footballPlayers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FootballPlayer" inverseName="team" inverseEntity="FootballPlayer"/>
         <relationship name="photo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Photo" inverseName="team" inverseEntity="Photo"/>
+        <relationship name="players" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Player" inverseName="team" inverseEntity="Player"/>
     </entity>
     <elements>
-        <element name="Team" positionX="-63" positionY="-18" width="128" height="119"/>
+        <element name="Team" positionX="-63" positionY="-18" width="128" height="89"/>
         <element name="Clip" positionX="-63" positionY="-9" width="128" height="44"/>
-        <element name="Photo" positionX="-54" positionY="0" width="128" height="104"/>
-        <element name="BaseballPlayer" positionX="-36" positionY="9" width="128" height="119"/>
-        <element name="BasketballPlayer" positionX="-18" positionY="27" width="128" height="119"/>
-        <element name="FootballPlayer" positionX="0" positionY="45" width="128" height="119"/>
+        <element name="Photo" positionX="-54" positionY="0" width="128" height="74"/>
+        <element name="Player" positionX="-36" positionY="9" width="128" height="134"/>
     </elements>
 </model>

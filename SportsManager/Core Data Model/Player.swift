@@ -1,6 +1,6 @@
 //
-//  BasketballPlayer.swift
-//  BasketballPlayer
+//  Player.swift
+//  Player
 //
 //  Created by Sam Lally on 11/24/21.
 //  Copyright © 2021 CS3714 Team 7. All rights reserved.
@@ -9,28 +9,29 @@
 import Foundation
 import CoreData
 
-// ❎ CoreData Basketball Player entity public class
-public class BasketballPlayer: NSManagedObject, Identifiable {
+// ❎ CoreData Player entity public class
+public class Player: NSManagedObject, Identifiable {
 
     @NSManaged public var name: String?
     @NSManaged public var age: NSNumber?
     @NSManaged public var height: NSNumber?
     @NSManaged public var weight: NSNumber?
+    @NSManaged public var sport: String?
     @NSManaged public var team: Team?
     @NSManaged public var photo: Photo?
 }
 
-extension BasketballPlayer {
+extension Player {
 
-    static func allBasketballPlayersFetchRequest() -> NSFetchRequest<BasketballPlayer> {
+    static func allPlayersFetchRequest() -> NSFetchRequest<Player> {
         /*
-         Create a fetchRequest to fetch BasketballPlayer entities from the dataBasket.
+         Create a fetchRequest to fetch Player entities from the database.
          Since the fetchRequest's 'predicate' property is not set to filter,
-         all of the BasketballPlayer entities will be fetched.
+         all of the Player entities will be fetched.
          */
-        let fetchRequest = NSFetchRequest<BasketballPlayer>(entityName: "BasketballPlayer")
+        let fetchRequest = NSFetchRequest<Player>(entityName: "Player")
         /*
-         List the fetched basketball players in alphabetical order with respect to name
+         List the fetched players in alphabetical order with respect to name
          */
         fetchRequest.sortDescriptors = [
             // Primary sort key: name
@@ -42,20 +43,20 @@ extension BasketballPlayer {
     
     /*
      ❎ CoreData @FetchRequest in PlayersList.swift invokes this class method
-        to fetch filtered BasketballPlayer entities from the dataBasket for the given search query.
+        to fetch filtered Player entities from the database for the given search query.
         The 'static' keyword designates the func as a class method invoked by using the
-        class name as BasketballPlayer.filteredBasketballPlayersFetchRequest() in any .swift file in your project.
+        class name as Player.filteredPlayersFetchRequest() in any .swift file in your project.
      */
-    static func filteredBasketballPlayersFetchRequest(searchCategory: String, searchQuery: String) -> NSFetchRequest<BasketballPlayer> {
+    static func filteredPlayersFetchRequest(searchCategory: String, searchQuery: String) -> NSFetchRequest<Player> {
         /*
-         Create a fetchRequest to fetch BasketballPlayer entities from the dataBasket.
+         Create a fetchRequest to fetch Player entities from the database.
          Since the fetchRequest's 'predicate' property is set to a NSPredicate condition,
-         only those BasketballPlayer entities satisfying the condition will be fetched.
+         only those Player entities satisfying the condition will be fetched.
          */
-        let fetchRequest = NSFetchRequest<BasketballPlayer>(entityName: "BasketballPlayer")
+        let fetchRequest = NSFetchRequest<Player>(entityName: "Player")
         
         /*
-         List the fetched Basketball players in alphabetical order with respect to name
+         List the fetched players in alphabetical order with respect to name
          */
         fetchRequest.sortDescriptors = [
             // Primary sort key: name
@@ -64,7 +65,7 @@ extension BasketballPlayer {
         
         /*
          Created NSPredicate object represents a condition or a compound condition with
-         AND/OR logical operators, which is used to filter fetching from the dataBasket.
+         AND/OR logical operators, which is used to filter fetching from the database.
          */
         switch searchCategory {
         case "Player Name":
