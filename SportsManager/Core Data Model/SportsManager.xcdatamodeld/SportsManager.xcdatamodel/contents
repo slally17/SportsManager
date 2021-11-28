@@ -9,24 +9,27 @@
         <relationship name="team" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Team" inverseName="photo" inverseEntity="Team"/>
     </entity>
     <entity name="Player" representedClassName=".BaseballPlayer" syncable="YES">
-        <attribute name="age" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="height" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="about" optional="YES" attributeType="String"/>
+        <attribute name="height" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="position" optional="YES" attributeType="String"/>
         <attribute name="sport" optional="YES" attributeType="String"/>
-        <attribute name="weight" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="weight" optional="YES" attributeType="String"/>
         <relationship name="photo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Photo" inverseName="player" inverseEntity="Photo"/>
         <relationship name="team" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Team" inverseName="players" inverseEntity="Team"/>
     </entity>
     <entity name="Team" representedClassName=".Team" syncable="YES">
+        <attribute name="about" optional="YES" attributeType="String"/>
+        <attribute name="league" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="sport" optional="YES" attributeType="String"/>
         <relationship name="photo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Photo" inverseName="team" inverseEntity="Photo"/>
         <relationship name="players" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Player" inverseName="team" inverseEntity="Player"/>
     </entity>
     <elements>
-        <element name="Team" positionX="-63" positionY="-18" width="128" height="89"/>
+        <element name="Team" positionX="-63" positionY="-18" width="128" height="119"/>
         <element name="Clip" positionX="-63" positionY="-9" width="128" height="44"/>
         <element name="Photo" positionX="-54" positionY="0" width="128" height="74"/>
-        <element name="Player" positionX="-36" positionY="9" width="128" height="134"/>
+        <element name="Player" positionX="-36" positionY="9" width="128" height="149"/>
     </elements>
 </model>

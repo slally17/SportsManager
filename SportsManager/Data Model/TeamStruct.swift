@@ -7,3 +7,10 @@
 //
 
 import Foundation
+
+struct TeamStruct: Decodable {
+    var name: String
+    var sport: String
+    var league: String
+    var about: String
+}

@@ -11,28 +11,28 @@ import SwiftUI
 
 private let apiKey = "40130162"
 
-var playersFound = [Weather]()
-fileprivate var weatherFound = Weather(id: UUID(), city: "", country: "", latitude: 0, longitude: 0, dateAndTime: "", icon: "", description: "", humidity: 0, minTemp: 0, maxTemp: 0)
+var playersFound = [PlayerStruct]()
+fileprivate var playerFound = PlayerStruct(name: "", sport: "", position: "", height: "", weight: "", about: "")
 
-fileprivate var previousCity = "", previousCountry = ""
+fileprivate var previousQuery = "", previousCategory = ""
 
 /*
 ==================================
 MARK: Obtain Weather Data from API
 ==================================
 */
-public func obtainWeatherDataFromApi(city: String, country: String) {
-    // Avoid executing this function if already done for the same city and country
-    if city == previousCity && country == previousCountry {
+public func obtainPlayerDataFromApi(query: String, category: String) {
+    // Avoid executing this function if already done for the same query
+    if query == previousQuery && category == previousCategory {
         return
     } else {
-        previousCity = city
-        previousCountry = country
+        previousQuery = query
+        previousCategory = category
     }
     
     // Initialization
-    weatherFound = Weather(id: UUID(), city: "", country: "", latitude: 0, longitude: 0, dateAndTime: "", icon: "", description: "", humidity: 0, minTemp: 0, maxTemp: 0)
-    weathersFound = [Weather]()
+    playerFound = PlayerStruct(name: "", sport: "", position: "", height: "", weight: "", about: "")
+    playersFound = [PlayerStruct]()
     
     
     /*
@@ -40,10 +40,14 @@ public func obtainWeatherDataFromApi(city: String, country: String) {
      *   Obtaining API Search Query URL Struct   *
      *********************************************
      */
-    let cityFormatted = city.replacingOccurrences(of: " ", with: "%20")
-    let apiUrl = "https://api.openweathermap.org/data/2.5/forecast?q=\(cityFormatted),\(country)&units=imperial&appid=\(apiKey)"
-    
-    print(apiUrl)
+    let queryFormatted = query.replacingOccurrences(of: " ", with: "%20")
+    var apiUrl = ""
+    if category == "player" {
+        apiUrl = "https://www.thesportsdb.com/api/v1/json/\(apiKey)/searchplayers.php?p=\(queryFormatted)"
+    }
+    else if category == "team" {
+        apiUrl = "https://www.thesportsdb.com/api/v1/json/\(apiKey)/lookup_all_players.php?id=\(queryFormatted)"
+    }
     
     /*
      searchQuery may include unrecognizable foreign characters inputted by the user,
@@ -68,7 +72,7 @@ public func obtainWeatherDataFromApi(city: String, country: String) {
         "accept": "application/json",
         "cache-control": "no-cache",
         "connection": "keep-alive",
-        "host": "api.openweathermap.org"
+        "host": "thesportsdb.com"
     ]
 
     let request = NSMutableURLRequest(url: apiQueryUrlStruct!,
@@ -142,74 +146,65 @@ public func obtainWeatherDataFromApi(city: String, country: String) {
              Key-Value pairs. Therefore, we use a Dictionary to represent a JSON object
              where Dictionary Key type is String and Value type is Any (instance of any type)
              */
-            var weatherDataDictionary = Dictionary<String, Any>()
+            var playerDictionary = Dictionary<String, Any>()
             
-            if let jsonObject = jsonResponse as? [String: Any] {
-                weatherDataDictionary = jsonObject
-                var latitude = 0.0, longitude = 0.0
-                
-                //---------------------------------
-                // Obtain Weather Lat/Long
-                //---------------------------------
-                if let cityDictionary = weatherDataDictionary["city"] as? [String: Any] {
-                    if let coordDictionary = cityDictionary["coord"] as? [String: Any] {
-                        if let weatherLatitude = coordDictionary["lat"] as? Double {
-                            latitude = weatherLatitude
-                        }
-                        if let weatherLongitude = coordDictionary["lon"] as? Double {
-                            longitude = weatherLongitude
-                        }
-                    }
-                } else {
-                    semaphore.signal()
-                    return
-                }
-                
-                if let jsonArray = weatherDataDictionary["list"] as? [Any] {
+            if let jsonDictionary = jsonResponse as? [String: Any] {
+                if let jsonArray = jsonDictionary["player"] as? [Any] {
                     for jArray in jsonArray {
                         if let jObject = jArray as? [String:Any] {
-                            weatherDataDictionary = jObject
-                            var dateAndTime = "", icon = "", description = "", humidity = 0, minTemp = 0.0, maxTemp = 0.0
+                            playerDictionary = jObject
+                            var name = "", sport = "", position = "", height = "", weight = "", about = ""
                             
-                            //-----------------------------------------
-                            // Obtain Weather Temp Min/Max and Humidity
-                            //-----------------------------------------
-                            if let mainDictionary = weatherDataDictionary["main"] as? [String: Any] {
-                                if let weatherMin = mainDictionary["temp_min"] as? Double {
-                                    minTemp = weatherMin
-                                }
-                                if let weatherMax = mainDictionary["temp_max"] as? Double {
-                                    maxTemp = weatherMax
-                                }
-                                if let weatherHumidity = mainDictionary["humidity"] as? Int {
-                                    humidity = weatherHumidity
-                                }
+                            //-------------------
+                            // Obtain Player Name
+                            //-------------------
+                            if let playerName = playerDictionary["strPlayer"] as? String {
+                                name = playerName
+                            }
+                            else {
+                                semaphore.signal()
+                                return
                             }
                             
-                            //------------------------------------
-                            // Obtain Weather Description and Icon
-                            //------------------------------------
-                            if let weatherArray = weatherDataDictionary["weather"] as? [Any] {
-                                if let weatherDictionary = weatherArray[0] as? [String: Any] {
-                                    if let weatherDescription = weatherDictionary["description"] as? String {
-                                        description = weatherDescription
-                                    }
-                                    if let weatherIcon = weatherDictionary["icon"] as? String {
-                                        icon = weatherIcon
-                                    }
-                                }
+                            //--------------------
+                            // Obtain Player Sport
+                            //--------------------
+                            if let playerSport = playerDictionary["strSport"] as? String {
+                                sport = playerSport
                             }
                             
-                            //-----------------------------
-                            // Obtain Weather Date and Time
-                            //-----------------------------
-                            if let weatherDateAndTime = weatherDataDictionary["dt_txt"] as? String {
-                                dateAndTime = weatherDateAndTime
+                            //-----------------------
+                            // Obtain Player Position
+                            //-----------------------
+                            if let playerPosition = playerDictionary["strPosition"] as? String {
+                                position = playerPosition
                             }
                             
-                            weatherFound = Weather(id: UUID(), city: city, country: country, latitude: latitude, longitude: longitude, dateAndTime: dateAndTime, icon: icon, description: description, humidity: humidity, minTemp: minTemp, maxTemp: maxTemp)
+                            //---------------------
+                            // Obtain Player Height
+                            //---------------------
+                            if let playerHeight = playerDictionary["strHeight"] as? String {
+                                height = playerHeight
+                            }
                             
-                            weathersFound.append(weatherFound)
+                            //---------------------
+                            // Obtain Player Weight
+                            //---------------------
+                            if let playerWeight = playerDictionary["strWeight"] as? String {
+                                weight = playerWeight
+                            }
+                            
+                            //--------------------
+                            // Obtain Player About
+                            //--------------------
+                            if let playerAbout = playerDictionary["strDescriptionEN"] as? String {
+                                about = playerAbout
+                            }
+                        
+                            
+                            playerFound = PlayerStruct(name: name, sport: sport, position: position, height: height, weight: weight, about: about)
+                            
+                            playersFound.append(playerFound)
                         } else {
                             semaphore.signal()
                             return
