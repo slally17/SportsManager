@@ -2,7 +2,7 @@
 //  Persistence.swift
 //  SportsManager
 //
-//  Created by Sam Lally on 11/24/21.
+//  Created by Osman Balci on 11/24/21.
 //
 
 import CoreData
