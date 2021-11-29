@@ -45,6 +45,8 @@
 		B3EB733A2751F21800435D0B /* TeamAPIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EB73392751F21800435D0B /* TeamAPIData.swift */; };
 		B3EB733C2751F22600435D0B /* PlayerAPIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EB733B2751F22600435D0B /* PlayerAPIData.swift */; };
 		B3EB733F2751F6F900435D0B /* SportsManager.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B3EB733D2751F6F900435D0B /* SportsManager.xcdatamodeld */; };
+		B3EB734227559DAD00435D0B /* PlayerData.json in Resources */ = {isa = PBXBuildFile; fileRef = B3EB734027559DAC00435D0B /* PlayerData.json */; };
+		B3EB734327559DAD00435D0B /* TeamData.json in Resources */ = {isa = PBXBuildFile; fileRef = B3EB734127559DAD00435D0B /* TeamData.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +90,8 @@
 		B3EB73392751F21800435D0B /* TeamAPIData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamAPIData.swift; sourceTree = "<group>"; };
 		B3EB733B2751F22600435D0B /* PlayerAPIData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerAPIData.swift; sourceTree = "<group>"; };
 		B3EB733E2751F6F900435D0B /* SportsManager.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SportsManager.xcdatamodel; sourceTree = "<group>"; };
+		B3EB734027559DAC00435D0B /* PlayerData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PlayerData.json; sourceTree = "<group>"; };
+		B3EB734127559DAD00435D0B /* TeamData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TeamData.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,6 +235,8 @@
 		B3660D0D274EBC09009189B9 /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
+				B3EB734027559DAC00435D0B /* PlayerData.json */,
+				B3EB734127559DAD00435D0B /* TeamData.json */,
 				B3660D33274ECD41009189B9 /* TeamData.swift */,
 				B3660D35274ECD73009189B9 /* TeamStruct.swift */,
 				B3660D37274ECD7E009189B9 /* PlayerData.swift */,
@@ -318,7 +324,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3EB734227559DAD00435D0B /* PlayerData.json in Resources */,
 				B3660CE5274EAF0F009189B9 /* Preview Assets.xcassets in Resources */,
+				B3EB734327559DAD00435D0B /* TeamData.json in Resources */,
 				B3660CE2274EAF0F009189B9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
