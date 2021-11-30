@@ -24,7 +24,6 @@
 		B3660D0C274EBBED009189B9 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3660D0B274EBBED009189B9 /* Settings.swift */; };
 		B3660D10274EBC3E009189B9 /* ClipsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3660D0F274EBC3E009189B9 /* ClipsList.swift */; };
 		B3660D12274EBC47009189B9 /* ClipItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3660D11274EBC47009189B9 /* ClipItem.swift */; };
-		B3660D14274EBC50009189B9 /* ClipDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3660D13274EBC50009189B9 /* ClipDetails.swift */; };
 		B3660D16274EBC5E009189B9 /* AddClip.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3660D15274EBC5E009189B9 /* AddClip.swift */; };
 		B3660D18274EBCC9009189B9 /* SearchDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3660D17274EBCC9009189B9 /* SearchDatabase.swift */; };
 		B3660D1A274ECB68009189B9 /* SearchPlayersList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3660D19274ECB68009189B9 /* SearchPlayersList.swift */; };
@@ -51,6 +50,7 @@
 		B3EB73472755EFCB00435D0B /* SearchTeamsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EB73462755EFCB00435D0B /* SearchTeamsList.swift */; };
 		B3EB73492755EFE400435D0B /* SearchTeamsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EB73482755EFE400435D0B /* SearchTeamsItem.swift */; };
 		B3EB734B2755EFFB00435D0B /* SearchTeamsDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EB734A2755EFFB00435D0B /* SearchTeamsDetails.swift */; };
+		B3EB734D275604C500435D0B /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EB734C275604C500435D0B /* WebView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,7 +73,6 @@
 		B3660D0B274EBBED009189B9 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		B3660D0F274EBC3E009189B9 /* ClipsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipsList.swift; sourceTree = "<group>"; };
 		B3660D11274EBC47009189B9 /* ClipItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipItem.swift; sourceTree = "<group>"; };
-		B3660D13274EBC50009189B9 /* ClipDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipDetails.swift; sourceTree = "<group>"; };
 		B3660D15274EBC5E009189B9 /* AddClip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClip.swift; sourceTree = "<group>"; };
 		B3660D17274EBCC9009189B9 /* SearchDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDatabase.swift; sourceTree = "<group>"; };
 		B3660D19274ECB68009189B9 /* SearchPlayersList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlayersList.swift; sourceTree = "<group>"; };
@@ -100,6 +99,7 @@
 		B3EB73462755EFCB00435D0B /* SearchTeamsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTeamsList.swift; sourceTree = "<group>"; };
 		B3EB73482755EFE400435D0B /* SearchTeamsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTeamsItem.swift; sourceTree = "<group>"; };
 		B3EB734A2755EFFB00435D0B /* SearchTeamsDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTeamsDetails.swift; sourceTree = "<group>"; };
+		B3EB734C275604C500435D0B /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +185,7 @@
 			children = (
 				B3EB73362751A1F500435D0B /* UserAuthentication.swift */,
 				B3EB73442755A4CD00435D0B /* UtilityFunctions.swift */,
+				B3EB734C275604C500435D0B /* WebView.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -230,7 +231,6 @@
 			children = (
 				B3660D0F274EBC3E009189B9 /* ClipsList.swift */,
 				B3660D11274EBC47009189B9 /* ClipItem.swift */,
-				B3660D13274EBC50009189B9 /* ClipDetails.swift */,
 				B3660D15274EBC5E009189B9 /* AddClip.swift */,
 			);
 			path = Clips;
@@ -384,7 +384,7 @@
 				B3EB733C2751F22600435D0B /* PlayerAPIData.swift in Sources */,
 				B3660CE0274EAF0D009189B9 /* ContentView.swift in Sources */,
 				B3660CF4274EB1A3009189B9 /* AppDelegate.swift in Sources */,
-				B3660D14274EBC50009189B9 /* ClipDetails.swift in Sources */,
+				B3EB734D275604C500435D0B /* WebView.swift in Sources */,
 				B3660CDE274EAF0D009189B9 /* SportsManagerApp.swift in Sources */,
 				B3660D24274ECBD0009189B9 /* ResetPassword.swift in Sources */,
 				B3660D06274EBA2A009189B9 /* PlayersList.swift in Sources */,
