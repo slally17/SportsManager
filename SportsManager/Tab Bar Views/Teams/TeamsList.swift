@@ -9,13 +9,38 @@
 import SwiftUI
 
 struct TeamsList: View {
+    @Environment(\.managedObjectContext) var managedObjectContext
+    
+    @FetchRequest(fetchRequest: Team.allTeamsFetchRequest()) var allTeamData: FetchedResults<Team>
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            List {
+                ForEach(allTeamData) { team in
+                    NavigationLink(destination: TeamDetails(team: team)) {
+                        TeamItem(team: team)
+                    }
+                }
+                .onDelete(perform: delete)
+                
+            }
+            .navigationBarTitle(Text("My Teams"), displayMode: .inline)
+            .navigationBarItems(leading: EditButton())
+            
+        }
+            .navigationViewStyle(StackNavigationViewStyle())
     }
-}
+    
+    func delete(at offsets: IndexSet) {
+        
+        let teamToDelete = allTeamData[offsets.first!]
+        
+        managedObjectContext.delete(teamToDelete)
 
-struct TeamsList_Previews: PreviewProvider {
-    static var previews: some View {
-        TeamsList()
+        do {
+          try managedObjectContext.save()
+        } catch {
+          print("Unable to delete selected team!")
+        }
     }
 }

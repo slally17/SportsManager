@@ -9,13 +9,22 @@
 import SwiftUI
 
 struct PlayerItem: View {
+    let player: Player
+    @FetchRequest(fetchRequest: Player.allPlayersFetchRequest()) var allPlayerData: FetchedResults<Player>
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
-
-struct PlayerItem_Previews: PreviewProvider {
-    static var previews: some View {
-        PlayerItem()
+        HStack {
+            getImageFromBinaryData(binaryData: player.photo!.photoData!, defaultFilename: "ImageUnavailable")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 80.0)
+            
+            VStack(alignment: .leading) {
+                Text(player.name ?? "")
+                Text("Height: \(player.height ?? "") Weight: \(player.weight ?? "")")
+                Text(player.team!.name ?? "")
+            }
+            .font(.system(size: 14))
+        }
     }
 }

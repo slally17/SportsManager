@@ -9,13 +9,23 @@
 import SwiftUI
 
 struct TeamItem: View {
+    
+    let team: Team
+    @FetchRequest(fetchRequest: Team.allTeamsFetchRequest()) var allTeamData: FetchedResults<Team>
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
-
-struct TeamItem_Previews: PreviewProvider {
-    static var previews: some View {
-        TeamItem()
+        HStack {
+            getImageFromBinaryData(binaryData: team.photo!.photoData!, defaultFilename: "ImageUnavailable")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 80.0)
+            
+            VStack(alignment: .leading) {
+                Text(team.name ?? "")
+                Text(team.league ?? "")
+                Text(team.sport ?? "")
+            }
+            .font(.system(size: 14))
+        }
     }
 }
