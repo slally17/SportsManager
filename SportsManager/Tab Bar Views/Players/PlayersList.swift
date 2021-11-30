@@ -16,15 +16,15 @@ struct PlayersList: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(allTeamData) { team in
-                    NavigationLink(destination: TeamDetails(team: team)) {
-                        TeamItem(team: team)
+                ForEach(allPlayerData) { player in
+                    NavigationLink(destination: PlayerDetails(player: player)) {
+                        PlayerItem(player: player)
                     }
                 }
                 .onDelete(perform: delete)
                 
             }
-            .navigationBarTitle(Text("My Teams"), displayMode: .inline)
+            .navigationBarTitle(Text("My Players"), displayMode: .inline)
             .navigationBarItems(leading: EditButton())
             
         }
@@ -33,14 +33,14 @@ struct PlayersList: View {
     
     func delete(at offsets: IndexSet) {
         
-        let teamToDelete = allTeamData[offsets.first!]
+        let playerToDelete = allPlayerData[offsets.first!]
         
-        managedObjectContext.delete(teamToDelete)
+        managedObjectContext.delete(playerToDelete)
 
         do {
           try managedObjectContext.save()
         } catch {
-          print("Unable to delete selected team!")
+          print("Unable to delete selected player!")
         }
     }
 }

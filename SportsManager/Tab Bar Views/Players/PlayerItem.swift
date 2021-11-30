@@ -21,8 +21,10 @@ struct PlayerItem: View {
             
             VStack(alignment: .leading) {
                 Text(player.name ?? "")
+                if let tempTeam = player.team as? Team {
+                    Text(tempTeam.name ?? "")
+                }
                 Text("Height: \(player.height ?? "") Weight: \(player.weight ?? "")")
-                Text(player.team!.name ?? "")
             }
             .font(.system(size: 14))
         }
