@@ -235,10 +235,10 @@
 		B3660D0D274EBC09009189B9 /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
-				B3EB734027559DAC00435D0B /* PlayerData.json */,
 				B3EB734127559DAD00435D0B /* TeamData.json */,
 				B3660D33274ECD41009189B9 /* TeamData.swift */,
 				B3660D35274ECD73009189B9 /* TeamStruct.swift */,
+				B3EB734027559DAC00435D0B /* PlayerData.json */,
 				B3660D37274ECD7E009189B9 /* PlayerData.swift */,
 				B3660D39274ECD8A009189B9 /* PlayerStruct.swift */,
 			);
