@@ -30,11 +30,11 @@ struct LoginView : View {
                     Image("Welcome")
                         .padding(.bottom, 10)
                     
-                    Text("My Private Photo Album")
+                    Text("Sports Manager")
                         .font(.headline)
                         .padding()
                     
-                    Image("PhotoAlbum")
+                    Image("AppIcon")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(minWidth: 300, maxWidth: 600)

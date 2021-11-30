@@ -1,5 +1,6 @@
 [
     {
+        "id": "EABD9B9A-4E13-4CD7-93AA-017DCD918D41",
         "name": "New York Mets",
         "sport": "Baseball",
         "league": "MLB",
@@ -7,6 +8,7 @@
             "photoUrl":"https:\/\/www.thesportsdb.com\/images\/media\/team\/badge\/rxqspq1431540337.png"
     },
     {
+        "id": "C77E2386-0F28-4278-80ED-171ED9B46426",
         "name": "New York Knicks",
         "sport": "Basketball",
         "league": "NBA",
@@ -14,6 +16,7 @@
             "photoUrl":"https:\/\/www.thesportsdb.com\/images\/media\/team\/badge\/wyhpuf1511810435.png"
     },
     {
+        "id": "64CE0259-7AC1-4D77-82C2-AC036386584D",
         "name": "Chicago Bears",
         "sport": "American Football",
         "league": "NFL",

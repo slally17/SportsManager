@@ -18,7 +18,7 @@ public class Player: NSManagedObject, Identifiable {
     @NSManaged public var sport: String?
     @NSManaged public var position: String?
     @NSManaged public var about: String?
-    @NSManaged public var favorite: Bool?
+    @NSManaged public var favorite: NSNumber?
     @NSManaged public var team: Team?
     @NSManaged public var photo: Photo?
 }

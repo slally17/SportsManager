@@ -8,7 +8,8 @@
 
 import Foundation
 
-struct PlayerStruct: Decodable {
+struct PlayerStruct: Decodable, Identifiable {
+    var id: UUID
     var name: String
     var sport: String
     var position: String

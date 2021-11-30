@@ -12,7 +12,7 @@ import SwiftUI
 private let apiKey = "40130162"
 
 var teamsFound = [TeamStruct]()
-fileprivate var teamFound = TeamStruct(name: "", sport: "", league: "", about: "", photoUrl: "")
+fileprivate var teamFound = TeamStruct(id: UUID(), name: "", sport: "", league: "", about: "", photoUrl: "")
 
 fileprivate var previousQuery = ""
 
@@ -30,7 +30,7 @@ public func obtainTeamDataFromApi(query: String) {
     }
     
     // Initialization
-    teamFound = TeamStruct(name: "", sport: "", league: "", about: "", photoUrl: "")
+    teamFound = TeamStruct(id: UUID(), name: "", sport: "", league: "", about: "", photoUrl: "")
     teamsFound = [TeamStruct]()
     
     
@@ -188,7 +188,7 @@ public func obtainTeamDataFromApi(query: String) {
                             }
                         
                             
-                            teamFound = TeamStruct(name: name, sport: sport, league: league, about: about, photoUrl: photoUrl)
+                            teamFound = TeamStruct(id: UUID(), name: name, sport: sport, league: league, about: about, photoUrl: photoUrl)
                             
                             teamsFound.append(teamFound)
                         } else {

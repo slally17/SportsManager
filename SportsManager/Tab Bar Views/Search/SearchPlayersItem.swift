@@ -9,13 +9,21 @@
 import SwiftUI
 
 struct SearchPlayersItem: View {
+    
+    let player: PlayerStruct
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
-
-struct SearchPlayersItem_Previews: PreviewProvider {
-    static var previews: some View {
-        SearchPlayersItem()
-    }
+        HStack {
+            getImageFromUrl(url: player.photoUrl, defaultFilename: "ImageUnavailable")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 80.0)
+            
+            VStack(alignment: .leading) {
+                Text(player.name)
+                Text(player.sport)
+            }
+            .font(.system(size: 14))
+        } // End of HStack
+    } // End of body
 }

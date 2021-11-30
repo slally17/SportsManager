@@ -10,8 +10,17 @@ import SwiftUI
 
 struct SearchTeamsList: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+        List {
+            ForEach(teamsFound) { aTeam in
+                if(aTeam.sport == "American Football" || aTeam.sport == "Basketball" || aTeam.sport == "Baseball") {
+                    NavigationLink(destination: SearchTeamsDetails(team: aTeam)) {
+                        SearchTeamsItem(team: aTeam)
+                    }
+                }
+            }
+        } // End of List
+        .navigationBarTitle(Text("Teams Found"), displayMode: .inline)
+    } // End of body
 }
 
 struct SearchTeamsList_Previews: PreviewProvider {

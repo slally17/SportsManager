@@ -12,7 +12,7 @@ import SwiftUI
 private let apiKey = "40130162"
 
 var playersFound = [PlayerStruct]()
-fileprivate var playerFound = PlayerStruct(name: "", sport: "", position: "", height: "", weight: "", about: "", photoUrl: "")
+fileprivate var playerFound = PlayerStruct(id: UUID(), name: "", sport: "", position: "", height: "", weight: "", about: "", photoUrl: "")
 
 fileprivate var previousQuery = "", previousCategory = ""
 
@@ -31,7 +31,7 @@ public func obtainPlayerDataFromApi(query: String, category: String) {
     }
     
     // Initialization
-    playerFound = PlayerStruct(name: "", sport: "", position: "", height: "", weight: "", about: "", photoUrl: "")
+    playerFound = PlayerStruct(id: UUID(), name: "", sport: "", position: "", height: "", weight: "", about: "", photoUrl: "")
     playersFound = [PlayerStruct]()
     
     
@@ -209,7 +209,7 @@ public func obtainPlayerDataFromApi(query: String, category: String) {
                             }
                         
                             
-                            playerFound = PlayerStruct(name: name, sport: sport, position: position, height: height, weight: weight, about: about, photoUrl: photoUrl)
+                            playerFound = PlayerStruct(id: UUID(), name: name, sport: sport, position: position, height: height, weight: weight, about: about, photoUrl: photoUrl)
                             
                             playersFound.append(playerFound)
                         } else {

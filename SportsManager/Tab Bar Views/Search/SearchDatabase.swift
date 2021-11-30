@@ -52,10 +52,54 @@ struct SearchDatabase: View {
                     }   // End of HStack
                         .frame(minWidth: 300, maxWidth: 500)
                         .alert(isPresented: $showMissingInputDataAlert, content: { missingInputDataAlert })
+                }
                     
+                Section(header: Text("Search Player/Team by Name")) {
+                    HStack {
+                        Button(action: {
+                            if inputDataValidated() {
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                                    /*
+                                     Execute the following code after 0.1 second of delay
+                                     so that they are not executed during the view update.
+                                     */
+                                    searchApi()
+                                    searchCompleted = true
+                                }
+                            } else {
+                                showMissingInputDataAlert = true
+                            }
+                        }) {
+                            Text(searchCompleted ? "Search Completed" : "Search")
+                        }
+                        .frame(width: 240, height: 36, alignment: .center)
+                        .background(
+                            RoundedRectangle(cornerRadius: 16)
+                                .strokeBorder(Color.black, lineWidth: 1)
+                        )
+                    }   // End of HStack
+                }
+                    
+                if searchCompleted {
+                    Section(header: Text("Show Details of the Players/Teams Found")) {
+                        NavigationLink(destination: showSearchResults) {
+                            HStack {
+                                Image(systemName: "list.bullet")
+                                    .imageScale(.medium)
+                                    .font(Font.title.weight(.regular))
+                                    .foregroundColor(.blue)
+                                Text("Show Player/Team Details")
+                                    .font(.system(size: 16))
+                            }
+                        }
+                        .frame(minWidth: 300, maxWidth: 500)
+                    }
                 }
             } // End of Form
             .navigationBarTitle(Text("Search Database"), displayMode: .inline)
+            .onAppear() {
+                searchCompleted = false
+            }
         } // End of NavigationView
         .navigationViewStyle(StackNavigationViewStyle())
     } // End of body
