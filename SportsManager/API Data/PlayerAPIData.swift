@@ -12,7 +12,7 @@ import SwiftUI
 private let apiKey = "40130162"
 
 var playersFound = [PlayerStruct]()
-fileprivate var playerFound = PlayerStruct(name: "", sport: "", position: "", height: "", weight: "", about: "")
+fileprivate var playerFound = PlayerStruct(name: "", sport: "", position: "", height: "", weight: "", about: "", photoUrl: "")
 
 fileprivate var previousQuery = "", previousCategory = ""
 
@@ -31,7 +31,7 @@ public func obtainPlayerDataFromApi(query: String, category: String) {
     }
     
     // Initialization
-    playerFound = PlayerStruct(name: "", sport: "", position: "", height: "", weight: "", about: "")
+    playerFound = PlayerStruct(name: "", sport: "", position: "", height: "", weight: "", about: "", photoUrl: "")
     playersFound = [PlayerStruct]()
     
     
@@ -153,7 +153,7 @@ public func obtainPlayerDataFromApi(query: String, category: String) {
                     for jArray in jsonArray {
                         if let jObject = jArray as? [String:Any] {
                             playerDictionary = jObject
-                            var name = "", sport = "", position = "", height = "", weight = "", about = ""
+                            var name = "", sport = "", position = "", height = "", weight = "", about = "", photoUrl = ""
                             
                             //-------------------
                             // Obtain Player Name
@@ -200,9 +200,16 @@ public func obtainPlayerDataFromApi(query: String, category: String) {
                             if let playerAbout = playerDictionary["strDescriptionEN"] as? String {
                                 about = playerAbout
                             }
+                            
+                            //--------------------
+                            // Obtain Player Photo
+                            //--------------------
+                            if let playerPhoto = playerDictionary["strThumb"] as? String {
+                                photoUrl = playerPhoto
+                            }
                         
                             
-                            playerFound = PlayerStruct(name: name, sport: sport, position: position, height: height, weight: weight, about: about)
+                            playerFound = PlayerStruct(name: name, sport: sport, position: position, height: height, weight: weight, about: about, photoUrl: photoUrl)
                             
                             playersFound.append(playerFound)
                         } else {

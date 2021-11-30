@@ -8,7 +8,7 @@
         <relationship name="player" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Player" inverseName="photo" inverseEntity="Player"/>
         <relationship name="team" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Team" inverseName="photo" inverseEntity="Team"/>
     </entity>
-    <entity name="Player" representedClassName=".BaseballPlayer" syncable="YES">
+    <entity name="Player" representedClassName=".Player" syncable="YES">
         <attribute name="about" optional="YES" attributeType="String"/>
         <attribute name="height" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>

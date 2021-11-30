@@ -15,4 +15,5 @@ struct PlayerStruct: Decodable {
     var height: String
     var weight: String
     var about: String
+    var photoUrl: String
 }

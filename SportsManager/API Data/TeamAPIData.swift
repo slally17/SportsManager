@@ -12,7 +12,7 @@ import SwiftUI
 private let apiKey = "40130162"
 
 var teamsFound = [TeamStruct]()
-fileprivate var teamFound = TeamStruct(name: "", sport: "", league: "", about: "")
+fileprivate var teamFound = TeamStruct(name: "", sport: "", league: "", about: "", photoUrl: "")
 
 fileprivate var previousQuery = ""
 
@@ -30,7 +30,7 @@ public func obtainTeamDataFromApi(query: String) {
     }
     
     // Initialization
-    teamFound = TeamStruct(name: "", sport: "", league: "", about: "")
+    teamFound = TeamStruct(name: "", sport: "", league: "", about: "", photoUrl: "")
     teamsFound = [TeamStruct]()
     
     
@@ -146,7 +146,7 @@ public func obtainTeamDataFromApi(query: String) {
                     for jArray in jsonArray {
                         if let jObject = jArray as? [String:Any] {
                             teamDictionary = jObject
-                            var name = "", sport = "", league = "", about = ""
+                            var name = "", sport = "", league = "", about = "", photoUrl = ""
                             
                             //-----------------
                             // Obtain Team Name
@@ -179,9 +179,16 @@ public func obtainTeamDataFromApi(query: String) {
                             if let teamAbout = teamDictionary["strDescriptionEN"] as? String {
                                 about = teamAbout
                             }
+                            
+                            //-----------------
+                            // Obtain Team Logo
+                            //-----------------
+                            if let teamLogo = teamDictionary["strTeamBadge"] as? String {
+                                photoUrl = teamLogo
+                            }
                         
                             
-                            teamFound = TeamStruct(name: name, sport: sport, league: league, about: about)
+                            teamFound = TeamStruct(name: name, sport: sport, league: league, about: about, photoUrl: photoUrl)
                             
                             teamsFound.append(teamFound)
                         } else {

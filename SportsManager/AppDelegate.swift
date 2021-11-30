@@ -13,11 +13,18 @@ class AppDelegate: NSObject, UIApplicationDelegate {
                      launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         /*
-        ************************************
-        *   Create Sports Manager Database *
-        ************************************
+        ***************************
+        *   Create Teams Database *
+        ***************************
         */
-        //createSportsManagerDatabase()      // Given in SportsManagerData.swift
+        createTeamsDatabase()      // Given in TeamsData.swift
+        
+        /*
+        *****************************
+        *   Create Players Database *
+        *****************************
+        */
+        createPlayersDatabase()      // Given in PlayersData.swift
         
         return true
     }

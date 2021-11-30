@@ -47,6 +47,7 @@
 		B3EB733F2751F6F900435D0B /* SportsManager.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B3EB733D2751F6F900435D0B /* SportsManager.xcdatamodeld */; };
 		B3EB734227559DAD00435D0B /* PlayerData.json in Resources */ = {isa = PBXBuildFile; fileRef = B3EB734027559DAC00435D0B /* PlayerData.json */; };
 		B3EB734327559DAD00435D0B /* TeamData.json in Resources */ = {isa = PBXBuildFile; fileRef = B3EB734127559DAD00435D0B /* TeamData.json */; };
+		B3EB73452755A4CD00435D0B /* UtilityFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EB73442755A4CD00435D0B /* UtilityFunctions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +93,7 @@
 		B3EB733E2751F6F900435D0B /* SportsManager.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SportsManager.xcdatamodel; sourceTree = "<group>"; };
 		B3EB734027559DAC00435D0B /* PlayerData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PlayerData.json; sourceTree = "<group>"; };
 		B3EB734127559DAD00435D0B /* TeamData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TeamData.json; sourceTree = "<group>"; };
+		B3EB73442755A4CD00435D0B /* UtilityFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityFunctions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				B3EB73362751A1F500435D0B /* UserAuthentication.swift */,
+				B3EB73442755A4CD00435D0B /* UtilityFunctions.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 				B3660D0C274EBBED009189B9 /* Settings.swift in Sources */,
 				B3660D34274ECD41009189B9 /* TeamData.swift in Sources */,
 				B3660CE7274EAF0F009189B9 /* Persistence.swift in Sources */,
+				B3EB73452755A4CD00435D0B /* UtilityFunctions.swift in Sources */,
 				B3660D16274EBC5E009189B9 /* AddClip.swift in Sources */,
 				B3660D02274EBA14009189B9 /* AddTeam.swift in Sources */,
 				B3660D18274EBCC9009189B9 /* SearchDatabase.swift in Sources */,

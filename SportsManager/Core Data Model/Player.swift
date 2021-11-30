@@ -13,10 +13,11 @@ import CoreData
 public class Player: NSManagedObject, Identifiable {
 
     @NSManaged public var name: String?
-    @NSManaged public var age: NSNumber?
-    @NSManaged public var height: NSNumber?
-    @NSManaged public var weight: NSNumber?
+    @NSManaged public var height: String?
+    @NSManaged public var weight: String?
     @NSManaged public var sport: String?
+    @NSManaged public var position: String?
+    @NSManaged public var about: String?
     @NSManaged public var team: Team?
     @NSManaged public var photo: Photo?
 }

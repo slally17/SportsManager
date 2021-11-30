@@ -13,4 +13,5 @@ struct TeamStruct: Decodable {
     var sport: String
     var league: String
     var about: String
+    var photoUrl: String
 }
