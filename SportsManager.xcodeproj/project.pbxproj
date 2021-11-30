@@ -27,9 +27,9 @@
 		B3660D14274EBC50009189B9 /* ClipDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3660D13274EBC50009189B9 /* ClipDetails.swift */; };
 		B3660D16274EBC5E009189B9 /* AddClip.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3660D15274EBC5E009189B9 /* AddClip.swift */; };
 		B3660D18274EBCC9009189B9 /* SearchDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3660D17274EBCC9009189B9 /* SearchDatabase.swift */; };
-		B3660D1A274ECB68009189B9 /* SearchList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3660D19274ECB68009189B9 /* SearchList.swift */; };
-		B3660D1C274ECB72009189B9 /* SearchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3660D1B274ECB72009189B9 /* SearchItem.swift */; };
-		B3660D1E274ECB7A009189B9 /* SearchDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3660D1D274ECB7A009189B9 /* SearchDetails.swift */; };
+		B3660D1A274ECB68009189B9 /* SearchPlayersList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3660D19274ECB68009189B9 /* SearchPlayersList.swift */; };
+		B3660D1C274ECB72009189B9 /* SearchPlayersItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3660D1B274ECB72009189B9 /* SearchPlayersItem.swift */; };
+		B3660D1E274ECB7A009189B9 /* SearchPlayersDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3660D1D274ECB7A009189B9 /* SearchPlayersDetails.swift */; };
 		B3660D20274ECBA8009189B9 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3660D1F274ECBA8009189B9 /* LoginView.swift */; };
 		B3660D22274ECBB7009189B9 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3660D21274ECBB7009189B9 /* MainView.swift */; };
 		B3660D24274ECBD0009189B9 /* ResetPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3660D23274ECBD0009189B9 /* ResetPassword.swift */; };
@@ -48,6 +48,9 @@
 		B3EB734227559DAD00435D0B /* PlayerData.json in Resources */ = {isa = PBXBuildFile; fileRef = B3EB734027559DAC00435D0B /* PlayerData.json */; };
 		B3EB734327559DAD00435D0B /* TeamData.json in Resources */ = {isa = PBXBuildFile; fileRef = B3EB734127559DAD00435D0B /* TeamData.json */; };
 		B3EB73452755A4CD00435D0B /* UtilityFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EB73442755A4CD00435D0B /* UtilityFunctions.swift */; };
+		B3EB73472755EFCB00435D0B /* SearchTeamsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EB73462755EFCB00435D0B /* SearchTeamsList.swift */; };
+		B3EB73492755EFE400435D0B /* SearchTeamsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EB73482755EFE400435D0B /* SearchTeamsItem.swift */; };
+		B3EB734B2755EFFB00435D0B /* SearchTeamsDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EB734A2755EFFB00435D0B /* SearchTeamsDetails.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,9 +76,9 @@
 		B3660D13274EBC50009189B9 /* ClipDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipDetails.swift; sourceTree = "<group>"; };
 		B3660D15274EBC5E009189B9 /* AddClip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClip.swift; sourceTree = "<group>"; };
 		B3660D17274EBCC9009189B9 /* SearchDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDatabase.swift; sourceTree = "<group>"; };
-		B3660D19274ECB68009189B9 /* SearchList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchList.swift; sourceTree = "<group>"; };
-		B3660D1B274ECB72009189B9 /* SearchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItem.swift; sourceTree = "<group>"; };
-		B3660D1D274ECB7A009189B9 /* SearchDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetails.swift; sourceTree = "<group>"; };
+		B3660D19274ECB68009189B9 /* SearchPlayersList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlayersList.swift; sourceTree = "<group>"; };
+		B3660D1B274ECB72009189B9 /* SearchPlayersItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlayersItem.swift; sourceTree = "<group>"; };
+		B3660D1D274ECB7A009189B9 /* SearchPlayersDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlayersDetails.swift; sourceTree = "<group>"; };
 		B3660D1F274ECBA8009189B9 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		B3660D21274ECBB7009189B9 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		B3660D23274ECBD0009189B9 /* ResetPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPassword.swift; sourceTree = "<group>"; };
@@ -94,6 +97,9 @@
 		B3EB734027559DAC00435D0B /* PlayerData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PlayerData.json; sourceTree = "<group>"; };
 		B3EB734127559DAD00435D0B /* TeamData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TeamData.json; sourceTree = "<group>"; };
 		B3EB73442755A4CD00435D0B /* UtilityFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityFunctions.swift; sourceTree = "<group>"; };
+		B3EB73462755EFCB00435D0B /* SearchTeamsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTeamsList.swift; sourceTree = "<group>"; };
+		B3EB73482755EFE400435D0B /* SearchTeamsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTeamsItem.swift; sourceTree = "<group>"; };
+		B3EB734A2755EFFB00435D0B /* SearchTeamsDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTeamsDetails.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,9 +215,12 @@
 			isa = PBXGroup;
 			children = (
 				B3660D17274EBCC9009189B9 /* SearchDatabase.swift */,
-				B3660D19274ECB68009189B9 /* SearchList.swift */,
-				B3660D1B274ECB72009189B9 /* SearchItem.swift */,
-				B3660D1D274ECB7A009189B9 /* SearchDetails.swift */,
+				B3660D19274ECB68009189B9 /* SearchPlayersList.swift */,
+				B3660D1B274ECB72009189B9 /* SearchPlayersItem.swift */,
+				B3660D1D274ECB7A009189B9 /* SearchPlayersDetails.swift */,
+				B3EB73462755EFCB00435D0B /* SearchTeamsList.swift */,
+				B3EB73482755EFE400435D0B /* SearchTeamsItem.swift */,
+				B3EB734A2755EFFB00435D0B /* SearchTeamsDetails.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -345,10 +354,12 @@
 				B3660D22274ECBB7009189B9 /* MainView.swift in Sources */,
 				B3660CFC274EB9A2009189B9 /* TeamsList.swift in Sources */,
 				B3660D10274EBC3E009189B9 /* ClipsList.swift in Sources */,
+				B3EB73472755EFCB00435D0B /* SearchTeamsList.swift in Sources */,
 				B3EB733F2751F6F900435D0B /* SportsManager.xcdatamodeld in Sources */,
 				B3660D00274EB9BA009189B9 /* TeamDetails.swift in Sources */,
 				B3660D20274ECBA8009189B9 /* LoginView.swift in Sources */,
 				B3EB73372751A1F500435D0B /* UserAuthentication.swift in Sources */,
+				B3EB734B2755EFFB00435D0B /* SearchTeamsDetails.swift in Sources */,
 				B3660D26274ECC47009189B9 /* Photo.swift in Sources */,
 				B3660D0A274EBBBC009189B9 /* PlayerDetails.swift in Sources */,
 				B3660D04274EBA1E009189B9 /* ChangeTeam.swift in Sources */,
@@ -360,11 +371,12 @@
 				B3660D02274EBA14009189B9 /* AddTeam.swift in Sources */,
 				B3660D18274EBCC9009189B9 /* SearchDatabase.swift in Sources */,
 				B3660D3A274ECD8A009189B9 /* PlayerStruct.swift in Sources */,
-				B3660D1E274ECB7A009189B9 /* SearchDetails.swift in Sources */,
+				B3EB73492755EFE400435D0B /* SearchTeamsItem.swift in Sources */,
+				B3660D1E274ECB7A009189B9 /* SearchPlayersDetails.swift in Sources */,
 				B3660D2A274ECCAB009189B9 /* Team.swift in Sources */,
-				B3660D1C274ECB72009189B9 /* SearchItem.swift in Sources */,
+				B3660D1C274ECB72009189B9 /* SearchPlayersItem.swift in Sources */,
 				B3660CFE274EB9AA009189B9 /* TeamItem.swift in Sources */,
-				B3660D1A274ECB68009189B9 /* SearchList.swift in Sources */,
+				B3660D1A274ECB68009189B9 /* SearchPlayersList.swift in Sources */,
 				B3660D36274ECD73009189B9 /* TeamStruct.swift in Sources */,
 				B3660D38274ECD7E009189B9 /* PlayerData.swift in Sources */,
 				B3660D28274ECC9F009189B9 /* Clip.swift in Sources */,

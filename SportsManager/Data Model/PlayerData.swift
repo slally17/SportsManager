@@ -79,6 +79,7 @@ private func populateDatabase() {
         playerEntity.height = aPlayer.height
         playerEntity.weight = aPlayer.weight
         playerEntity.about = aPlayer.about
+        playerEntity.favorite = true;
 
         /*
          ======================================================
