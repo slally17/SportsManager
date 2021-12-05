@@ -2,7 +2,7 @@
 //  Settings.swift
 //  Settings
 //
-//  Created by Osman Balci on 11/24/21.
+//  Created by Sam Lally, Brian Nguyen, and Kevin Krupa on 11/24/21.
 //  Copyright © 2021 CS3714 Team 7. All rights reserved.
 //
 
@@ -16,6 +16,7 @@ struct Settings: View {
     @State private var showUnmatchedPasswordAlert = false
     @State private var showPasswordSetAlert = false
     @State private var showPasswordRemovedAlert = false
+    @State private var showPasswordRequirementAlert = false
     
     let securityQuestions = ["In what city or town did your mother and father meet?", "In what city or town were you born?", "What did you want to be when you grew up?", "What do you remember most from your childhood?", "What is the name of the boy or girl that you first kissed?", "What is the name of the first school you attended?", "What is the name of your favorite childhood friend?", "What is the name of your first pet?", "What is your mother's maiden name?", "What was your favorite place to visit as a child?"]
     
@@ -119,19 +120,28 @@ struct Settings: View {
                                  UserDefaults provides an interface to the user’s defaults database,
                                  where you store key-value pairs persistently across launches of your app.
                                  */
-                                // Store the password in the user’s defaults database
-                                UserDefaults.standard.set(passwordEntered, forKey: "Password")
                                 
-                                // Store the selected security question index in the user’s defaults database
-                                UserDefaults.standard.set(securityQuestions[selectedSecurityQuestionIndex], forKey: "SecurityQuestion")
+                                let encodedPass = (encrypt(message: passwordEntered, shift: 5))
+                                if (checkTextSufficientComplexity(text: passwordEntered)) {
+                                    // Store the password in the user’s defaults database
+                                    UserDefaults.standard.set(encodedPass, forKey: "Password")
+                                    
+                                    // Store the selected security question index in the user’s defaults database
+                                    UserDefaults.standard.set(securityQuestions[selectedSecurityQuestionIndex], forKey: "SecurityQuestion")
+                                    
+                                    // Store the answer to the selected security question in the user’s defaults database
+                                    UserDefaults.standard.set(answerToSelectedSecurityQuestion, forKey: "SecurityAnswer")
+                                    
+                                    passwordEntered = ""
+                                    passwordVerified = ""
+                                    answerToSelectedSecurityQuestion = ""
+                                    showPasswordSetAlert = true
+                                }
+                                else {
+                                    showPasswordRequirementAlert = true
+                                }
                                 
-                                // Store the answer to the selected security question in the user’s defaults database
-                                UserDefaults.standard.set(answerToSelectedSecurityQuestion, forKey: "SecurityAnswer")
                                 
-                                passwordEntered = ""
-                                passwordVerified = ""
-                                answerToSelectedSecurityQuestion = ""
-                                showPasswordSetAlert = true
                             } else {
                                 showUnmatchedPasswordAlert = true
                             }
@@ -145,6 +155,7 @@ struct Settings: View {
                             )
                     }
                     .alert(isPresented: $showUnmatchedPasswordAlert, content: { unmatchedPasswordAlert })
+                    .alert(isPresented: $showPasswordRequirementAlert, content: { passwordRequirmentAlert })
                 }
                 Section(header: Text("Remove Password")) {
                     Button(action: {
@@ -177,6 +188,15 @@ struct Settings: View {
     }   // End of var
     
     //-------------------
+    // Password Requirement Alert
+    //-------------------
+    var passwordRequirmentAlert: Alert {
+        Alert(title: Text("Password Does Not Meet Requirements!"),
+              message: Text("Password requires at least one captial letter and a number"),
+              dismissButton: .default(Text("OK")) )
+    }
+    
+    //-------------------
     // Password Set Alert
     //-------------------
     var passwordSetAlert: Alert {
@@ -201,6 +221,23 @@ struct Settings: View {
         Alert(title: Text("Password Removed!"),
               message: Text("You can now unclock the app without a password!"),
               dismissButton: .default(Text("OK")) )
+    }
+    
+    func checkTextSufficientComplexity(text : String) -> Bool{
+
+
+        let capitalLetterRegEx  = ".*[A-Z]+.*"
+        let texttest = NSPredicate(format:"SELF MATCHES %@", capitalLetterRegEx)
+        let capitalresult = texttest.evaluate(with: text)
+        
+
+
+        let numberRegEx  = ".*[0-9]+.*"
+        let texttest1 = NSPredicate(format:"SELF MATCHES %@", numberRegEx)
+        let numberresult = texttest1.evaluate(with: text)
+      
+        return capitalresult && numberresult
+
     }
 }
 

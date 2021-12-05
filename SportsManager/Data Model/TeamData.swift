@@ -2,7 +2,7 @@
 //  TeamData.swift
 //  TeamData
 //
-//  Created by Sam Lally on 11/24/21.
+//  Created by Sam Lally, Brian Nguyen, and Kevin Krupa on 11/24/21.
 //  Copyright © 2021 CS3714 Team 7. All rights reserved.
 //
 
@@ -87,7 +87,7 @@ private func populateDatabase() {
         // ❎ Create an instance of the Photo Entity in CoreData managedObjectContext
         let photoEntity = Photo(context: managedObjectContext)
         
-        // Obtain the album cover photo image from Assets.xcassets as UIImage
+        // Obtain the photo image from Assets.xcassets as UIImage
         let photoUIImage = getUIImageFromUrl(url: aTeam.photoUrl, defaultFilename: "ImageUnavailable")
         
         // Convert photoUIImage to data of type Data (Binary Data) in JPEG format with 100% quality

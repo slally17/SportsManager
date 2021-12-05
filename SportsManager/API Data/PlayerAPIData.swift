@@ -2,7 +2,7 @@
 //  PlayerAPIData.swift
 //  PlayerAPIData
 //
-//  Created by Sam Lally on 11/26/21.
+//  Created by Sam Lally, Brian Nguyen, and Kevin Krupa on 11/24/21.
 //  Copyright © 2021 CS3714 Team 7. All rights reserved.
 //
 
@@ -18,7 +18,7 @@ fileprivate var previousQuery = "", previousCategory = ""
 
 /*
 ==================================
-MARK: Obtain Weather Data from API
+MARK: Obtain Player Data from API
 ==================================
 */
 public func obtainPlayerDataFromApi(query: String, category: String) {

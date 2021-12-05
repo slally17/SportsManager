@@ -2,7 +2,7 @@
 //  LoginView.swift
 //  LoginView
 //
-//  Created by Osman Balci on 11/24/21.
+//  Created by Sam Lally, Brian Nguyen, and Kevin Krupa on 11/24/21.
 //  Copyright © 2021 CS3714 Team 7. All rights reserved.
 //
 
@@ -53,12 +53,13 @@ struct LoginView : View {
                              */
                             // Retrieve the password from the user’s defaults database under the key "Password"
                             let validPassword = UserDefaults.standard.string(forKey: "Password")
+                            let decodedPass = encrypt(message: validPassword ?? "Pass", shift: -5)
                             
                             /*
                              If the user has not yet set a password, validPassword = nil
                              In this case, allow the user to login.
                              */
-                            if validPassword == nil || enteredPassword == validPassword {
+                            if validPassword == nil || enteredPassword == decodedPass {
                                 canLogin = true
                             } else {
                                 showInvalidPasswordAlert = true

@@ -2,10 +2,9 @@
 //  UserAuthentication.swift
 //  UserAuthentication
 //
-//  Created by Osman Balci on 11/26/21.
+//  Created by Sam Lally, Brian Nguyen, and Kevin Krupa on 11/24/21.
 //  Copyright © 2021 CS3714 Team 7. All rights reserved.
 //
-
 import Foundation
 import LocalAuthentication
 
