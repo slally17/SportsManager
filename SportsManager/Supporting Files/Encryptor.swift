@@ -11,6 +11,7 @@ import Foundation
 func encrypt(message: String, shift: Int) -> String {
 
     func shiftLetter(ucs: UnicodeScalar) -> UnicodeScalar {
+        //set range to be between uppercase A and lowercase z
         let firstLetter = Int(UnicodeScalar("A").value)
         let lastLetter = Int(UnicodeScalar("z").value)
         let letterCount = lastLetter - firstLetter + 1
@@ -31,5 +32,6 @@ func encrypt(message: String, shift: Int) -> String {
             return ucs
         }
     }
+    //return the given string that has been shifted
     return String(String.UnicodeScalarView(message.unicodeScalars.map(shiftLetter)))
 }
