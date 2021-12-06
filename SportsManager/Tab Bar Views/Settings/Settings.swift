@@ -223,6 +223,7 @@ struct Settings: View {
               dismissButton: .default(Text("OK")) )
     }
     
+    //returns true if this password contains both a number and a capitalized letter
     func checkTextSufficientComplexity(text : String) -> Bool{
 
 
