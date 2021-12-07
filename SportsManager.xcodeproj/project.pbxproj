@@ -53,6 +53,8 @@
 		F5F631E727560AC700C43126 /* PlayerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F631E427560AC700C43126 /* PlayerItem.swift */; };
 		F5F631E827560AC700C43126 /* PlayerDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F631E527560AC700C43126 /* PlayerDetails.swift */; };
 		F5F631E927560AC700C43126 /* PlayersList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F631E627560AC700C43126 /* PlayersList.swift */; };
+		F5F6323B275FEF3D00C43126 /* PlayerStructItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F6323A275FEF3D00C43126 /* PlayerStructItem.swift */; };
+		F5F6323D275FEF5400C43126 /* PlayerStructDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F6323C275FEF5400C43126 /* PlayerStructDetails.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +106,8 @@
 		F5F631E427560AC700C43126 /* PlayerItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerItem.swift; sourceTree = "<group>"; };
 		F5F631E527560AC700C43126 /* PlayerDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerDetails.swift; sourceTree = "<group>"; };
 		F5F631E627560AC700C43126 /* PlayersList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersList.swift; sourceTree = "<group>"; };
+		F5F6323A275FEF3D00C43126 /* PlayerStructItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStructItem.swift; sourceTree = "<group>"; };
+		F5F6323C275FEF5400C43126 /* PlayerStructDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStructDetails.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -279,6 +283,8 @@
 				F5F631E527560AC700C43126 /* PlayerDetails.swift */,
 				F5F631E427560AC700C43126 /* PlayerItem.swift */,
 				F5F631E627560AC700C43126 /* PlayersList.swift */,
+				F5F6323A275FEF3D00C43126 /* PlayerStructItem.swift */,
+				F5F6323C275FEF5400C43126 /* PlayerStructDetails.swift */,
 			);
 			path = Players;
 			sourceTree = "<group>";
@@ -374,6 +380,7 @@
 				F5F631DE27560AB300C43126 /* TeamRoster.swift in Sources */,
 				F5F631E027560AB300C43126 /* AddTeam.swift in Sources */,
 				F5F631E827560AC700C43126 /* PlayerDetails.swift in Sources */,
+				F5F6323B275FEF3D00C43126 /* PlayerStructItem.swift in Sources */,
 				B3660CE7274EAF0F009189B9 /* Persistence.swift in Sources */,
 				B3EB73452755A4CD00435D0B /* UtilityFunctions.swift in Sources */,
 				B3660D16274EBC5E009189B9 /* AddClip.swift in Sources */,
@@ -395,6 +402,7 @@
 				B3660CF4274EB1A3009189B9 /* AppDelegate.swift in Sources */,
 				B3EB734D275604C500435D0B /* WebView.swift in Sources */,
 				B3660CDE274EAF0D009189B9 /* SportsManagerApp.swift in Sources */,
+				F5F6323D275FEF5400C43126 /* PlayerStructDetails.swift in Sources */,
 				F5F631DF27560AB300C43126 /* TeamDetails.swift in Sources */,
 				B3660D24274ECBD0009189B9 /* ResetPassword.swift in Sources */,
 				B3660D2C274ECCBA009189B9 /* Player.swift in Sources */,

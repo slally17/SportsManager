@@ -46,7 +46,7 @@ public func obtainPlayerDataFromApi(query: String, category: String) {
         apiUrl = "https://www.thesportsdb.com/api/v1/json/\(apiKey)/searchplayers.php?p=\(queryFormatted)"
     }
     else if category == "team" {
-        apiUrl = "https://www.thesportsdb.com/api/v1/json/\(apiKey)/lookup_all_players.php?id=\(queryFormatted)"
+        apiUrl = "https://www.thesportsdb.com/api/v1/json/\(apiKey)/searchplayers.php?t=\(queryFormatted)"
     }
     
     /*

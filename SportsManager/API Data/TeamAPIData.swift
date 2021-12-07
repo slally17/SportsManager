@@ -12,6 +12,7 @@ import SwiftUI
 private let apiKey = "40130162"
 
 var teamsFound = [TeamStruct]()
+var playersRoster = [PlayerStruct]()
 fileprivate var teamFound = TeamStruct(id: UUID(), name: "", sport: "", league: "", about: "", photoUrl: "")
 
 fileprivate var previousQuery = ""

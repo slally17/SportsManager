@@ -27,7 +27,7 @@ struct TeamDetails: View {
                 Text(team.league ?? "")
             }
             Section (header: Text("Team Roster")) {
-                NavigationLink(destination: TeamRoster(team: team)) {
+                NavigationLink(destination: getRoster()) {
                     HStack {
                         Image(systemName: "person.3")
                         Text("Roster")
@@ -42,5 +42,10 @@ struct TeamDetails: View {
             }
         }
         .navigationBarTitle(Text("Trip Details"), displayMode: .inline)
+    }
+    
+    func getRoster() -> TeamRoster {
+        obtainPlayerDataFromApi(query: team.name ?? "", category: "team")
+        return TeamRoster(team: team)
     }
 }
