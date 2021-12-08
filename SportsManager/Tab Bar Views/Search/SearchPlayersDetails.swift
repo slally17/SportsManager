@@ -96,6 +96,7 @@ struct SearchPlayersDetails: View {
         
         // ❎ Dress up the new Player entity
         newPlayer.name = player.name
+        newPlayer.teamName = player.teamName
         newPlayer.sport = player.sport
         newPlayer.position = player.position
         newPlayer.height = player.height
