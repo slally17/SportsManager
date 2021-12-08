@@ -2,7 +2,7 @@
 //  SearchTeamsDetails.swift
 //  SearchTeamsDetails
 //
-//  Created by Sam Lally, Brian Nguyen, and Kevin Krupa on 11/24/21.
+//  Created by Sam Lally.
 //  Copyright © 2021 CS3714 Team 7. All rights reserved.
 //
 

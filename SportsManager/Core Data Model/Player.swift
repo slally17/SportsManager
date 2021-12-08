@@ -2,7 +2,7 @@
 //  Player.swift
 //  Player
 //
-//  Created by Sam Lally, Brian Nguyen, and Kevin Krupa on 11/24/21.
+//  Created by Sam Lally.
 //  Copyright © 2021 CS3714 Team 7. All rights reserved.
 //
 
@@ -13,6 +13,7 @@ import CoreData
 public class Player: NSManagedObject, Identifiable {
 
     @NSManaged public var name: String?
+    @NSManaged public var teamName: String?
     @NSManaged public var height: String?
     @NSManaged public var weight: String?
     @NSManaged public var sport: String?

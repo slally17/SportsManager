@@ -2,7 +2,7 @@
 //  PlayerStructItem.swift
 //  PlayerStructItem
 //
-//  Created by Kevin Krupa on 12/7/21.
+//  Created by Kevin Krupa.
 //  Copyright © 2021 CS3714 Team 7. All rights reserved.
 //
 
@@ -21,6 +21,7 @@ struct PlayerStructItem: View {
             
             VStack(alignment: .leading) {
                 Text(player.name)
+                Text(player.teamName)
                 Text("Height: \(player.height) \nWeight: \(player.weight)")
             }
             .font(.system(size: 14))

@@ -2,6 +2,7 @@
     {
         "id": "1CD3ADE3-41A6-425B-95EE-F938A8497239",
         "name": "Samuel Dalembert",
+        "teamName": "Shanxi Zhongyu",
         "sport": "Basketball",
         "position": "Forward\/Center",
         "height": "2.11 m (6 ft 9 in)",
@@ -12,6 +13,7 @@
     {
         "id": "B2E8BA65-CF1A-4469-8B01-E434967DA690",
         "name": "Yao Ming",
+        "teamName": "_Retired Basketball",
         "sport": "Basketball",
         "position": "Center",
         "height": "7 ft 6 in (2.29 m)",
@@ -22,6 +24,7 @@
     {
         "id": "DCE06682-78CF-47B4-A13D-13036A6A21CA",
         "name": "Luis Urias",
+        "teamName": "Milwaukee Brewers",
         "sport": "Baseball",
         "position": "Shortstop",
         "height": "5' 9",
@@ -32,6 +35,7 @@
     {
         "id": "86DD5891-FC71-410A-9048-1C14CA705D97",
         "name": "Mike Trout",
+        "teamName": "Los Angeles Angels",
         "sport": "Baseball",
         "position": "Center",
         "height": "6' 2",
@@ -42,6 +46,7 @@
     {
         "id": "FE2BDAEF-32DD-4753-979D-C816A9B7E7A4",
         "name": "Anthony Barr",
+        "teamName": "Minnesota Vikings",
         "sport": "American Football",
         "position": "Outside Linebacker",
         "height": "6 ft 5 in (1.96 m)",
@@ -52,6 +57,7 @@
     {
         "id": "ED88706E-E5C5-47A8-95D6-A13EDD9C1365",
         "name": "Ron Rivera",
+        "teamName": "Carolina Panthers",
         "sport": "American Football",
         "position": "Manager",
         "height": "",

@@ -2,7 +2,7 @@
 //  PlayerStructDetails.swift
 //  PlayerStructDetails
 //
-//  Created by Kevin Krupa on 12/7/21.
+//  Created by Kevin Krupa.
 //  Copyright © 2021 CS3714 Team 7. All rights reserved.
 //
 
@@ -22,6 +22,9 @@ struct PlayerStructDetails: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(minWidth: 300, maxWidth: 500, alignment: .center)
+            }
+            Section (header: Text("Player Team")) {
+                Text(player.teamName)
             }
             Section (header: Text("Player Position")) {
                 Text(player.position)

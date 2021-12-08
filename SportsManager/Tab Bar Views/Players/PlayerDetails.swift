@@ -2,7 +2,7 @@
 //  PlayerDetails.swift
 //  PlayerDetails
 //
-//  Created by Sam Lally, Brian Nguyen, and Kevin Krupa on 11/24/21.
+//  Created by Kevin Krupa.
 //  Copyright © 2021 CS3714 Team 7. All rights reserved.
 //
 import SwiftUI
@@ -22,10 +22,8 @@ struct PlayerDetails: View {
                     .aspectRatio(contentMode: .fit)
                     .frame(minWidth: 300, maxWidth: 500, alignment: .center)
             }
-            if let tempTeam = player.team as? Team {
-                Section (header: Text("Player Team")) {
-                    Text(tempTeam.name ?? "")
-                }
+            Section (header: Text("Player Team")) {
+                Text(player.teamName ?? "")
             }
             Section (header: Text("Player Position")) {
                 Text(player.position ?? "")

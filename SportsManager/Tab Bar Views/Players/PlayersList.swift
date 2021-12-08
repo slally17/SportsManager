@@ -2,7 +2,7 @@
 //  PlayersList.swift
 //  PlayersList
 //
-//  Created by Sam Lally, Brian Nguyen, and Kevin Krupa on 11/24/21.
+//  Created by Kevin Krupa.
 //  Copyright © 2021 CS3714 Team 7. All rights reserved.
 //
 

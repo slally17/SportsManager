@@ -2,7 +2,7 @@
 //  PlayerItem.swift
 //  PlayerItem
 //
-//  Created by Sam Lally, Brian Nguyen, and Kevin Krupa on 11/24/21.
+//  Created by Kevin Krupa.
 //  Copyright © 2021 CS3714 Team 7. All rights reserved.
 //
 
@@ -21,9 +21,7 @@ struct PlayerItem: View {
             
             VStack(alignment: .leading) {
                 Text(player.name ?? "")
-                if let tempTeam = player.team as? Team {
-                    Text(tempTeam.name ?? "")
-                }
+                Text(player.teamName ?? "")
                 Text("Height: \(player.height ?? "") \nWeight: \(player.weight ?? "")")
             }
             .font(.system(size: 14))
