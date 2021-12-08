@@ -34,11 +34,20 @@ struct LoginView : View {
                         .font(.headline)
                         .padding()
                     
-                    Image("AppIcon")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(minWidth: 300, maxWidth: 600)
-                        .padding()
+                    Text("Powered By")
+                        .font(.system(size: 18, weight: .light, design: .serif))
+                        .italic()
+                        .padding(.top, 30)
+                        .padding(.bottom, 20)
+                    
+                    Link(destination: URL(string: "https://www.thesportsdb.com/api.php")!) {
+                        HStack {
+                            Image("sportsdb")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(minWidth: 300, maxWidth: 500, alignment: .center)
+                        }
+                    }
                     
                     SecureField("Password", text: $enteredPassword)
                         .textFieldStyle(RoundedBorderTextFieldStyle())

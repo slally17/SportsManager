@@ -63,7 +63,7 @@ struct Settings: View {
                         .padding()
                     }
                 }
-                Section(header: Text("Enter Password")) {
+                Section(header: Text("Enter Password (Must contain one cap and one number)")) {
                     HStack {
                         if showEnteredValues {
                             TextField("Enter Password", text: $passwordEntered)

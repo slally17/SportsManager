@@ -21,7 +21,7 @@ struct PlayerStructItem: View {
             
             VStack(alignment: .leading) {
                 Text(player.name)
-                Text("Height: \(player.height) Weight: \(player.weight)")
+                Text("Height: \(player.height) \nWeight: \(player.weight)")
             }
             .font(.system(size: 14))
         }
