@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "sportsdb.png",
+      "filename" : "LaunchImage.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "sportsdb2.png",
+      "filename" : "LaunchImage2.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "sportsdb3.png",
+      "filename" : "LaunchImage3.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
