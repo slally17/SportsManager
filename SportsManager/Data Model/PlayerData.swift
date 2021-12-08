@@ -74,6 +74,7 @@ private func populateDatabase() {
         
         // ❎ Dress it up by specifying its attributes
         playerEntity.name = aPlayer.name
+        playerEntity.teamName = aPlayer.teamName
         playerEntity.sport = aPlayer.sport
         playerEntity.position = aPlayer.position
         playerEntity.height = aPlayer.height
